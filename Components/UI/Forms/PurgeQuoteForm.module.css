@@ -1,0 +1,65 @@
+.form {
+  background: #fff;
+  border: 1px solid #d4dee4;
+  border-radius: 28px;
+  box-shadow: 0 24px 70px rgba(4, 22, 38, .18);
+  color: #0a1b29;
+  overflow: hidden;
+}
+
+.cardHeader { background: #082b4b; color: #fff; padding: 24px 24px 18px; text-align: center; }
+.cardHeader strong { display: block; font-size: clamp(1.7rem, 2.2vw, 2.1rem); letter-spacing: -.035em; line-height: 1.12; }
+.cardHeader p { color: rgba(255,255,255,.8); font-size: .98rem; margin-top: 8px; }
+.highlightBar { align-items: center; background: #13a4df; color: #fff; display: flex; font-size: .9rem; font-weight: 650; gap: 8px; justify-content: center; padding: 9px 16px; }
+.fields { display: grid; gap: 16px; padding: 20px 24px 24px; }
+.formHeader { align-items: baseline; display: flex; gap: 12px; justify-content: space-between; padding-bottom: 4px; }
+.formHeader > span { font-size: 1.05rem; font-weight: 750; }
+.formHeader small { color: #60717e; }
+.form label { display: grid; gap: 7px; }
+.form label > span { color: #263b4a; font-size: .82rem; font-weight: 700; }
+.form input, .form select, .form textarea {
+  background: #f9fbfc;
+  border: 1px solid #d4dee4;
+  border-radius: 10px;
+  color: #0a1b29;
+  font: inherit;
+  outline: none;
+  padding: 13px 14px;
+  transition: border-color .2s, box-shadow .2s;
+  width: 100%;
+}
+.form textarea { resize: vertical; }
+.form input:focus, .form select:focus, .form textarea:focus { border-color: #169bd5; box-shadow: 0 0 0 3px rgba(22, 155, 213, .12); }
+.twoColumns { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+.form button {
+  align-items: center;
+  background: #13a4df;
+  border: 0;
+  border-radius: 10px;
+  color: #031727;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-weight: 800;
+  gap: 12px;
+  justify-content: center;
+  padding: 15px 18px;
+  transition: background .2s, transform .2s;
+}
+.form button:hover { background: #43c3f2; transform: translateY(-1px); }
+.form button:disabled { cursor: wait; opacity: .65; }
+.form button span { font-size: 1.25rem; }
+.footerNote { border-top: 1px solid #dfe7eb; color: #082b4b; font-size: .85rem; font-weight: 650; margin-top: 2px; padding-top: 16px; text-align: center; }
+.privacy { color: #71808b; font-size: .72rem; line-height: 1.4; text-align: center; }
+.success, .error { border-radius: 9px; font-size: .85rem; padding: 11px 13px; }
+.success { background: #e5f8ef; color: #12573a; }
+.error { background: #fff0f0; color: #8c2525; }
+
+@media (max-width: 600px) {
+  .form { border-radius: 18px; }
+  .cardHeader { padding: 22px 18px 16px; }
+  .fields { padding: 18px; }
+  .formHeader { display: grid; }
+  .formHeader small { font-size: .7rem; }
+  .twoColumns { grid-template-columns: 1fr; }
+}
