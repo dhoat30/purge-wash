@@ -90,7 +90,7 @@ export default function MovingQuoteLeadForm({
   formName = "Get a Free Moving Quote",
   title = "Get Your Free Quote",
   subtitle = "Takes 60 seconds. No obligation whatsoever.",
-  highlightText = "Efficient Stacking, Fewer Trips",
+  highlightText = "⚡ 1200+ Auckland Homes Washed",
   submitButtonText = "GET FREE QUOTE",
   showPhoneCta = true,
   footerNote = "Honest advice • Free Quote • No obligation",

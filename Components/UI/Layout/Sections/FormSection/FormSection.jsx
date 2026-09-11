@@ -235,7 +235,7 @@ export default function FormSection({
             <div className={styles.highlightBar}>
               <BoltIcon sx={{ fontSize: 18 }} />
               <Typography variant="subtitle1" component="p" color="white">
-                Efficient Stacking, Fewer Trips
+              1200+ Auckland Homes Washed
               </Typography>
             </div>
             <div className={styles.formBody}>
