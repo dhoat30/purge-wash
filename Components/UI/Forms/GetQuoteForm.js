@@ -44,8 +44,7 @@ export default function GetQuoteForm({
   const [newSubmission, setNewSubmission] = useState(false);
   const [mapsLoaded, setMapsLoaded] = useState(false);
   const [googleAdsAddress, setGoogleAdsAddress] = useState({
-    pickUpAddress: {},
-    dropOffAddress: {},
+    address: {},
   }); // For Google Ads conversion tracking
   // click id
   const { clickIds } = useClickIds();
@@ -115,9 +114,7 @@ export default function GetQuoteForm({
       formName: formName,
       message: `First Name: ${formData.firstname} \nEmail: ${
         formData.email
-      } \nPhone Number: ${formData.phone} \n Pick Up Address: ${
-        formData.pickUpAddress
-      }\n Address: ${formData.address}
+      } \nPhone Number: ${formData.phone}\nAddress: ${formData.address}
      
  `,
       portalID: process.env.NEXT_PUBLIC_HUBSPOT_PORTAL_ID,
@@ -217,7 +214,7 @@ export default function GetQuoteForm({
           });
           sendFormSubmissionToGoogleTagManager({
             eventName: "quote_form_submission",
-            formName: "Moving Quote",
+            formName: formName,
             transactionId,
             conversionValue: 0,
             currency: "NZD",
@@ -226,12 +223,14 @@ export default function GetQuoteForm({
               firstName: firstName,
               email: formData.email,
               phone: formData.phone,
-              street: `${googleAdsAddress.pickUpAddress.streetNumber || ""} ${
-                googleAdsAddress.pickUpAddress.streetName || ""
+              address: formData.address,
+              street: `${googleAdsAddress.address.streetNumber || ""} ${
+                googleAdsAddress.address.streetName || ""
               }`.trim(),
-              city: googleAdsAddress.pickUpAddress.city,
-              region: googleAdsAddress.pickUpAddress.region,
-              postCode: googleAdsAddress.pickUpAddress.postalCode,
+              suburb: googleAdsAddress.address.suburb || "",
+              city: googleAdsAddress.address.city || "",
+              region: googleAdsAddress.address.region || "",
+              postCode: googleAdsAddress.address.postalCode || "",
             },
           });
           router.push("/form-submitted/thank-you");
